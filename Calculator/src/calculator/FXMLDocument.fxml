@@ -30,17 +30,17 @@
                   <Font size="36.0" />
                </font>
             </Button>
-            <Button fx:id="root" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="544.0" prefWidth="154.0" style="-fx-background-color: orange;" text="√" GridPane.columnIndex="2" GridPane.rowIndex="4">
+            <Button fx:id="root" mnemonicParsing="false" onAction="#handleButtonActionCommandExtend" prefHeight="544.0" prefWidth="154.0" style="-fx-background-color: orange;" text="√" GridPane.columnIndex="2" GridPane.rowIndex="4">
                <font>
                   <Font size="36.0" />
                </font>
             </Button>
-            <Button fx:id="equal" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="499.0" prefWidth="158.0" style="-fx-background-color: orange;" text="=" GridPane.rowIndex="4">
+            <Button fx:id="equal" mnemonicParsing="false" onAction="#handleButtonActionEqual" prefHeight="499.0" prefWidth="158.0" style="-fx-background-color: orange;" text="=" GridPane.rowIndex="4">
                <font>
                   <Font size="36.0" />
                </font>
             </Button>
-            <Button fx:id="divid" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="94.0" prefWidth="126.0" style="-fx-background-color: orange;" text="÷" GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <Button fx:id="divid" mnemonicParsing="false" onAction="#handleButtonActionCommand" prefHeight="94.0" prefWidth="126.0" style="-fx-background-color: orange;" text="÷" GridPane.columnIndex="3" GridPane.rowIndex="3">
                <font>
                   <Font size="36.0" />
                </font>
@@ -55,12 +55,12 @@
                   <Font size="36.0" />
                </font>
             </Button>
-            <Button fx:id="emp" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="94.0" prefWidth="126.0" style="-fx-background-color: black;" text="C" textFill="WHITE" GridPane.rowIndex="3">
+            <Button fx:id="emp" mnemonicParsing="false" onAction="#handleButtonActionClear" prefHeight="94.0" prefWidth="126.0" style="-fx-background-color: black;" text="C" textFill="WHITE" GridPane.rowIndex="3">
                <font>
                   <Font size="36.0" />
                </font>
             </Button>
-            <Button fx:id="mult" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="94.0" prefWidth="126.0" style="-fx-background-color: orange;" text="x" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <Button fx:id="mult" mnemonicParsing="false" onAction="#handleButtonActionCommand" prefHeight="94.0" prefWidth="126.0" style="-fx-background-color: orange;" text="x" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <font>
                   <Font size="36.0" />
                </font>
@@ -80,7 +80,7 @@
                   <Font size="36.0" />
                </font>
             </Button>
-            <Button fx:id="minus" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="94.0" prefWidth="126.0" style="-fx-background-color: orange;" text="-" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <Button fx:id="minus" mnemonicParsing="false" onAction="#handleButtonActionCommand" prefHeight="94.0" prefWidth="126.0" style="-fx-background-color: orange;" text="-" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <font>
                   <Font size="36.0" />
                </font>
@@ -90,7 +90,7 @@
                   <Font size="36.0" />
                </font>
             </Button>
-            <Button fx:id="plus" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="94.0" prefWidth="126.0" style="-fx-background-color: orange;" text="+" GridPane.columnIndex="3">
+            <Button fx:id="plus" mnemonicParsing="false" onAction="#handleButtonActionCommand" prefHeight="94.0" prefWidth="126.0" style="-fx-background-color: orange;" text="+" GridPane.columnIndex="3">
                <font>
                   <Font size="36.0" />
                </font>
@@ -115,12 +115,12 @@
                   <Font size="36.0" />
                </font>
             </Button>
-            <Button fx:id="perc" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="194.0" prefWidth="164.0" style="-fx-background-color: orange;" text="\%" GridPane.columnIndex="3" GridPane.rowIndex="4">
+            <Button fx:id="perc" mnemonicParsing="false" onAction="#handleButtonActionCommandExtend" prefHeight="194.0" prefWidth="164.0" style="-fx-background-color: orange;" text="\%" GridPane.columnIndex="3" GridPane.rowIndex="4">
                <font>
                   <Font size="36.0" />
                </font>
             </Button>
-            <Button fx:id="pm" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="402.0" prefWidth="156.0" style="-fx-background-color: orange;" text="±" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Button fx:id="pm" mnemonicParsing="false" onAction="#handleButtonActionCommandExtend" prefHeight="402.0" prefWidth="156.0" style="-fx-background-color: orange;" text="±" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <font>
                   <Font size="36.0" />
                </font>
