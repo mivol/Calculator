@@ -13,17 +13,22 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-
+import java.util.ArrayList;
 /**
  *
  * @author volkmi
  */
 public class FXMLDocumentController implements Initializable  {
-    
+    ArrayList<Double>numbers = new ArrayList<>();
+    ArrayList<String>operators = new ArrayList<>();
     double numberOne;
     int operation;
     double result;
     double numberTwo;
+    boolean firstTimeMin = true;
+    boolean firstTimeMult = true;
+    boolean firstTimeDiv = true;
+    double min;
     @FXML
     private Button one;
     @FXML
@@ -92,19 +97,45 @@ public class FXMLDocumentController implements Initializable  {
         }else if(event.getSource() == point){
             display.setText(display.getText() + ".");
         }else if(event.getSource() == plus){
-            numberOne = Double.parseDouble(display.getText());
-            operation = 1;
-            display.setText("");
+            
+                numbers.add(Double.parseDouble(display.getText()));
+                result += numbers.get(numbers.size()-1);
+                operation = 1;
+                display.setText("");
+            
+            
+            
         }else if(event.getSource() == minus){
-            numberOne = Double.parseDouble(display.getText());
+            if(firstTimeMin){
+               numbers.add(Double.parseDouble(display.getText()));
+               result = numbers.get(numbers.size()-1);
+               firstTimeMin = false;
+            }else{
+               numbers.add(Double.parseDouble(display.getText()));
+               result -= numbers.get(numbers.size()-1);
+            }
             operation = 2 ;
             display.setText("");
         }else if(event.getSource() == mult){
-            numberOne = Double.parseDouble(display.getText());
+            if(firstTimeMult){
+               numbers.add(Double.parseDouble(display.getText()));
+               result = numbers.get(numbers.size()-1);
+               firstTimeMult = false;
+            }else{
+               numbers.add(Double.parseDouble(display.getText()));
+               result *= numbers.get(numbers.size()-1);
+            }
             operation = 3;
             display.setText("");
         }else if(event.getSource() == divid){
-            numberOne = Double.parseDouble(display.getText());
+            if(firstTimeDiv){
+               numbers.add(Double.parseDouble(display.getText()));
+               result = numbers.get(numbers.size()-1);
+               firstTimeDiv = false;
+            }else{
+               numbers.add(Double.parseDouble(display.getText()));
+               result /= numbers.get(numbers.size()-1);
+            }
             operation = 4;
             display.setText("");
         }else if(event.getSource() == root){
@@ -126,28 +157,45 @@ public class FXMLDocumentController implements Initializable  {
             display.setText(String.valueOf(result));
         }else if(event.getSource() == emp ){
             display.setText("");
+            result= 0;
+            numbers.clear();
+            firstTimeMin = true;
+            firstTimeMult = true;
+            firstTimeDiv = true;
         }else if(event.getSource() == equal){
-             numberTwo = Double.parseDouble(display.getText());
+             numbers.add(Double.parseDouble(display.getText()));
             if(operation == 1){
-                 result = numberOne + numberTwo;
+                 result += numbers.get(numbers.size()-1);
                 display.setText(String.valueOf(result));
+                result= 0;
+                numbers.clear();
             }else if(operation == 2){
-                 result = numberOne - numberTwo;
+                result -= numbers.get(numbers.size()-1);
                 display.setText(String.valueOf(result));
+                result= 0;
+                numbers.clear();
+                firstTimeMin = true;
+                
             }else if(operation == 3){
-                 result = numberOne * numberTwo;
+                result *= numbers.get(numbers.size()-1);
                 display.setText(String.valueOf(result));
+                result= 0;
+                numbers.clear();
+                firstTimeMult = true;
             }else if(operation == 4){
                 if (numberTwo == 0) {
                     display.setText("ERR");
                     throw new IllegalArgumentException("divided by zero");   
                 }else{
-                    result = numberOne / numberTwo;
+                    result /= numbers.get(numbers.size()-1);
                     display.setText(String.valueOf(result));
+                    result= 0;
+                    numbers.clear();
+                    firstTimeDiv = true;
             }
             }
         }
-
+            System.out.println("Array: " + numbers + "Result: " + result);
     }
     
     @Override
